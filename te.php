@@ -21,7 +21,9 @@ if ($conn->connect_error){
 }
 echo "Connected successfully";
 
-$sql = "UPDATE ambulances SET Ambulance_latitude = $latitude, Ambulance_longitude = $longitude WHERE id_ambulance = '001'";
+$query = "UPDATE ambulances SET Ambulance_latitude = $latitude, Ambulance_longitude = $longitude WHERE id_ambulance = '001'";
+mysqli_query($conn,$query);
+
 
 if ($conn->query($sql) == TRUE) {
     echo "New record created successfully";
