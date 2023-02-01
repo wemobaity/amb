@@ -21,8 +21,8 @@
   <body>
     <div id="map"></div>
     <form class="myForm" action = "te.php" method = "post">
-        latitude:<input type = "text" name="latitude">
-        longitude:<input type = "text" name="longitude"><br>
+        latitude:<input type = "text" name="latitude" id="latitude">
+        longitude:<input type = "text" name="longitude" id="longitude"><br>
     </form>
     <script>
       // Note: This example requires that you consent to location sharing when
@@ -44,6 +44,10 @@
               lat: position.coords.latitude,
               lng: position.coords.longitude
             };
+
+            var longitude, latitude;
+            latitude = document.getElementById('latitude');
+            longitude = document.getElementById('longitude');
 
             document.querySelector('.myForm input[name = "latitude"]').value = pos.lat;
             document.querySelector('.myForm input[name = "longitude"]').value = pos.lng;
